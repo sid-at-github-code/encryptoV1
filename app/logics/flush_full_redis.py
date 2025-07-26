@@ -7,8 +7,7 @@ import redis
 import os 
 from dotenv import load_dotenv
 
-from functools import wraps
-from flask import request, jsonify
+
 import redis
 
 # Connect to Redis

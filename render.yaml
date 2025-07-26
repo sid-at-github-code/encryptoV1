@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: EncryptO
+    env: python
+    repo: https://github.com/sid-at-github-code/encryptoV1.git
+    branch: main
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn run:app"
+    envVars:
+      - key: REDIS_URL
+        value: rediss://default:AWZZAAIjcDE3Y2U4YjcyYjNlMTE0ZGY1YmU3MGIwODdhNzlmZGI5YXAxMA@firm-reindeer-26201.upstash.io:6379
+      - key: UNIVERSAL_HMAC_KEY
+        value: diodeop0206
+      - key: FRONTEND_URL
+        value: http://localhost:3000
+    plan: free
